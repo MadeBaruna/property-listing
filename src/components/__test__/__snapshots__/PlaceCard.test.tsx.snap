@@ -1,7 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders <PlaceCard /> 1`] = `
-.c1 {
+.c2 {
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  line-height: 24px;
+  font-size: 16px;
+  background: #04ACF4;
+  color: white;
+  cursor: pointer;
+  font-family: 'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+  -webkit-transition: 200ms ease-out;
+  transition: 200ms ease-out;
+}
+
+.c2:hover {
+  background: #0484f4;
+  -webkit-transition: 200ms ease-out;
+  transition: 200ms ease-out;
+}
+
+.c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -10,97 +30,73 @@ exports[`renders <PlaceCard /> 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  width: 335px;
+  width: calc(50% - 20px);
+  max-width: 320px;
   margin: 10px;
   cursor: pointer;
   -webkit-transition: 100ms ease-out;
   transition: 100ms ease-out;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
-.c1:hover {
+.c0 img {
+  object-fit: cover;
+  width: 100%;
+}
+
+.c0:hover {
   box-shadow: 0px 13px 21px -5px rgba(0,0,0,0.2);
   -webkit-transition: 100ms ease-out;
   transition: 100ms ease-out;
 }
 
-.c2 {
-  position: relative;
-}
-
-.c2 img {
-  object-fit: cover;
-  width: 100%;
-}
-
-.c2 span {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  background: rgba(0,0,0,0.5);
-  padding: 5px 10px;
-  color: white;
-  opacity: 0;
-  -webkit-transition: 100ms ease-out;
-  transition: 100ms ease-out;
-}
-
-.c0:hover .c2 span {
-  opacity: 1;
-  -webkit-transition: 100ms ease-out;
-  transition: 100ms ease-out;
-}
-
-.c3 {
+.c1 {
   padding: 10px;
 }
 
-.c3 h3 {
+.c1 h3 {
   white-space: nowrap;
   overflow: hidden;
   display: block;
   text-overflow: ellipsis;
 }
 
-.c3 p {
+.c1 p {
   height: 100%;
   line-height: 18px;
   max-height: 36px;
   word-wrap: break-word;
   overflow: hidden;
-  margin-top: 15px;
+  margin-top: 5px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c3 p.city {
+.c1 p.city {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  margin-bottom: 5px;
 }
 
-.c3 svg {
+.c1 svg {
   margin-right: 5px;
 }
 
 <div
-  class="c0 c1"
+  class="c0"
 >
+  <img
+    alt="thumbnail"
+    src="https://loremflickr.com/320/240/apartment,office?lock=1"
+  />
   <div
-    class="c2"
-  >
-    <img
-      alt="thumbnail"
-      src="https://loremflickr.com/320/240/apartment,office?lock=1"
-    />
-    <span>
-      Lihat Detail
-    </span>
-  </div>
-  <div
-    class="c3"
+    class="c1"
   >
     <h3>
       Mediterania Garden Residence 22222222
@@ -124,6 +120,12 @@ exports[`renders <PlaceCard /> 1`] = `
       </svg>
        Jakarta Barat
     </p>
+    <button
+      class="c2"
+      style="float:right"
+    >
+      Lihat Detail
+    </button>
   </div>
 </div>
 `;

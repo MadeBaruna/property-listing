@@ -1,7 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders without crashing 1`] = `
-.c9 {
+.c10 {
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  line-height: 24px;
+  font-size: 16px;
+  background: #04ACF4;
+  color: white;
+  cursor: pointer;
+  font-family: 'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+  -webkit-transition: 200ms ease-out;
+  transition: 200ms ease-out;
+}
+
+.c10:hover {
+  background: #0484f4;
+  -webkit-transition: 200ms ease-out;
+  transition: 200ms ease-out;
+}
+
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -10,78 +30,61 @@ exports[`renders without crashing 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  width: 335px;
+  width: calc(50% - 20px);
+  max-width: 320px;
   margin: 10px;
   cursor: pointer;
   -webkit-transition: 100ms ease-out;
   transition: 100ms ease-out;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
-.c9:hover {
+.c8 img {
+  object-fit: cover;
+  width: 100%;
+}
+
+.c8:hover {
   box-shadow: 0px 13px 21px -5px rgba(0,0,0,0.2);
   -webkit-transition: 100ms ease-out;
   transition: 100ms ease-out;
 }
 
-.c10 {
-  position: relative;
-}
-
-.c10 img {
-  object-fit: cover;
-  width: 100%;
-}
-
-.c10 span {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  background: rgba(0,0,0,0.5);
-  padding: 5px 10px;
-  color: white;
-  opacity: 0;
-  -webkit-transition: 100ms ease-out;
-  transition: 100ms ease-out;
-}
-
-.c8:hover .c10 span {
-  opacity: 1;
-  -webkit-transition: 100ms ease-out;
-  transition: 100ms ease-out;
-}
-
-.c11 {
+.c9 {
   padding: 10px;
 }
 
-.c11 h3 {
+.c9 h3 {
   white-space: nowrap;
   overflow: hidden;
   display: block;
   text-overflow: ellipsis;
 }
 
-.c11 p {
+.c9 p {
   height: 100%;
   line-height: 18px;
   max-height: 36px;
   word-wrap: break-word;
   overflow: hidden;
-  margin-top: 15px;
+  margin-top: 5px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c11 p.city {
+.c9 p.city {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  margin-bottom: 5px;
 }
 
-.c11 svg {
+.c9 svg {
   margin-right: 5px;
 }
 
@@ -90,6 +93,7 @@ exports[`renders without crashing 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  height: calc(100vh - 70px);
 }
 
 .c7 {
@@ -101,13 +105,19 @@ exports[`renders without crashing 1`] = `
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   padding: 10px;
-  max-width: 710px;
+  width: 50%;
+  max-width: 681px;
 }
 
-.c12 {
+.c11 {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+}
+
+.c12 {
+  height: 100%;
+  width: 100%;
 }
 
 .c1 {
@@ -262,21 +272,14 @@ exports[`renders without crashing 1`] = `
       class="c7"
     >
       <div
-        class="c8 c9"
+        class="c8"
       >
+        <img
+          alt="thumbnail"
+          src="https://loremflickr.com/320/240/apartment,office?lock=1"
+        />
         <div
-          class="c10"
-        >
-          <img
-            alt="thumbnail"
-            src="https://loremflickr.com/320/240/apartment,office?lock=1"
-          />
-          <span>
-            Lihat Detail
-          </span>
-        </div>
-        <div
-          class="c11"
+          class="c9"
         >
           <h3>
             Mediterania Garden Residence 22222222
@@ -300,24 +303,23 @@ exports[`renders without crashing 1`] = `
             </svg>
              Jakarta Barat
           </p>
+          <button
+            class="c10"
+            style="float:right"
+          >
+            Lihat Detail
+          </button>
         </div>
       </div>
       <div
-        class="c8 c9"
+        class="c8"
       >
+        <img
+          alt="thumbnail"
+          src="https://loremflickr.com/320/240/apartment,office?lock=1"
+        />
         <div
-          class="c10"
-        >
-          <img
-            alt="thumbnail"
-            src="https://loremflickr.com/320/240/apartment,office?lock=1"
-          />
-          <span>
-            Lihat Detail
-          </span>
-        </div>
-        <div
-          class="c11"
+          class="c9"
         >
           <h3>
             Mediterania Garden Residence 2
@@ -341,24 +343,23 @@ exports[`renders without crashing 1`] = `
             </svg>
              Jakarta Barat
           </p>
+          <button
+            class="c10"
+            style="float:right"
+          >
+            Lihat Detail
+          </button>
         </div>
       </div>
       <div
-        class="c8 c9"
+        class="c8"
       >
+        <img
+          alt="thumbnail"
+          src="https://loremflickr.com/320/240/apartment,office?lock=1"
+        />
         <div
-          class="c10"
-        >
-          <img
-            alt="thumbnail"
-            src="https://loremflickr.com/320/240/apartment,office?lock=1"
-          />
-          <span>
-            Lihat Detail
-          </span>
-        </div>
-        <div
-          class="c11"
+          class="c9"
         >
           <h3>
             Mediterania Garden Residence 2
@@ -382,24 +383,23 @@ exports[`renders without crashing 1`] = `
             </svg>
              Jakarta Barat
           </p>
+          <button
+            class="c10"
+            style="float:right"
+          >
+            Lihat Detail
+          </button>
         </div>
       </div>
       <div
-        class="c8 c9"
+        class="c8"
       >
+        <img
+          alt="thumbnail"
+          src="https://loremflickr.com/320/240/apartment,office?lock=1"
+        />
         <div
-          class="c10"
-        >
-          <img
-            alt="thumbnail"
-            src="https://loremflickr.com/320/240/apartment,office?lock=1"
-          />
-          <span>
-            Lihat Detail
-          </span>
-        </div>
-        <div
-          class="c11"
+          class="c9"
         >
           <h3>
             Mediterania Garden Residence 2
@@ -423,12 +423,22 @@ exports[`renders without crashing 1`] = `
             </svg>
              Jakarta Barat
           </p>
+          <button
+            class="c10"
+            style="float:right"
+          >
+            Lihat Detail
+          </button>
         </div>
       </div>
     </div>
     <div
-      class="c12"
-    />
+      class="c11"
+    >
+      <div
+        class="c12"
+      />
+    </div>
   </div>
 </div>
 `;

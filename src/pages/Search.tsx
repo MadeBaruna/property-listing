@@ -27,7 +27,8 @@ const CardContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   padding: 10px;
-  max-width: 710px;
+  width: 50%;
+  max-width: 681px;
 `;
 
 const MapContainer = styled.div`
