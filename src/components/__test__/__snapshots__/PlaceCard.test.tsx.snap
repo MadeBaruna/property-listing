@@ -15,6 +15,17 @@ exports[`renders <PlaceCard /> 1`] = `
   transition: 200ms ease-out;
 }
 
+.c2.outlined {
+  background: white;
+  border: 1px solid #04ACF4;
+  color: #04ACF4;
+}
+
+.c2.outlined:hover {
+  background: #04ACF4;
+  color: white;
+}
+
 .c2:hover {
   background: #0484f4;
   -webkit-transition: 200ms ease-out;
@@ -121,7 +132,7 @@ exports[`renders <PlaceCard /> 1`] = `
        Jakarta Barat
     </p>
     <button
-      class="c2"
+      class="outlined c2"
       style="float:right"
     >
       Lihat Detail

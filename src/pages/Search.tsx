@@ -10,6 +10,7 @@ import PlaceCard from '../components/PlaceCard';
 import marker from 'leaflet/dist/images/marker-icon.png';
 import marker2x from 'leaflet/dist/images/marker-icon-2x.png';
 import markerShadow from 'leaflet/dist/images/marker-shadow.png';
+import Button from '../components/Button';
 // @ts-ignore
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
@@ -29,6 +30,7 @@ const CardContainer = styled.div`
   padding: 10px;
   width: 50%;
   max-width: 681px;
+  height: 0;
 `;
 
 const MapContainer = styled.div`
@@ -38,6 +40,12 @@ const MapContainer = styled.div`
 const Map = styled(LeafletMap)`
   height: 100%;
   width: 100%;
+`;
+
+const ControlContainer = styled.div`
+  flex: 1;
+  display: flex;
+  justify-content: center;
 `;
 
 interface IState {
@@ -66,6 +74,10 @@ export default class Search extends Component<{}, IState> {
           <PlaceCard thumbnail="https://loremflickr.com/320/240/apartment,office?lock=1" name="Mediterania Garden Residence 2" description="Mediterania Garden Residence 2 berlokasi di Podomoro City Jl. Letjen S.Parman Kav.28. Apartemen ini dikembangkan oleh PT Agung Podomoro Land , Tbk,Mediterania Garden Residence 2 memiliki 6 tower. Dalam kompleks ini tersedia beragam fasilitas untuk mendukung hunian Anda, Terdapat pula beragam sarana dan fasilitas yang menjamin kenyamanan hunian Anda, seperti: Access Card, Atm Center, Basketball Court, Bbq Pit, Drug Store, Function Hall, Gym, Jogging Track, Laundry, Mini Market, Movie Theater, Playground, Restaurant, Salon, Super Market, Swimming Pool dan Tennis Court." city="Jakarta Barat" />
           <PlaceCard thumbnail="https://loremflickr.com/320/240/apartment,office?lock=1" name="Mediterania Garden Residence 2" description="Mediterania Garden Residence 2 berlokasi di Podomoro City Jl. Letjen S.Parman Kav.28. Apartemen ini dikembangkan oleh PT Agung Podomoro Land , Tbk,Mediterania Garden Residence 2 memiliki 6 tower. Dalam kompleks ini tersedia beragam fasilitas untuk mendukung hunian Anda, Terdapat pula beragam sarana dan fasilitas yang menjamin kenyamanan hunian Anda, seperti: Access Card, Atm Center, Basketball Court, Bbq Pit, Drug Store, Function Hall, Gym, Jogging Track, Laundry, Mini Market, Movie Theater, Playground, Restaurant, Salon, Super Market, Swimming Pool dan Tennis Court." city="Jakarta Barat" />
           <PlaceCard thumbnail="https://loremflickr.com/320/240/apartment,office?lock=1" name="Mediterania Garden Residence 2" description="Mediterania Garden Residence 2 berlokasi di Podomoro City Jl. Letjen S.Parman Kav.28. Apartemen ini dikembangkan oleh PT Agung Podomoro Land , Tbk,Mediterania Garden Residence 2 memiliki 6 tower. Dalam kompleks ini tersedia beragam fasilitas untuk mendukung hunian Anda, Terdapat pula beragam sarana dan fasilitas yang menjamin kenyamanan hunian Anda, seperti: Access Card, Atm Center, Basketball Court, Bbq Pit, Drug Store, Function Hall, Gym, Jogging Track, Laundry, Mini Market, Movie Theater, Playground, Restaurant, Salon, Super Market, Swimming Pool dan Tennis Court." city="Jakarta Barat" />
+          <ControlContainer>
+            <Button style={{ margin: 5, width: 100 }}>Previous</Button>
+            <Button style={{ margin: 5, width: 100 }}>Next</Button>
+          </ControlContainer>
         </CardContainer>
         <MapContainer>
           <Map center={position} zoom={this.state.zoom}>

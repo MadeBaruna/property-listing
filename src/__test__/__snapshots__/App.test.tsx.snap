@@ -15,6 +15,17 @@ exports[`renders without crashing 1`] = `
   transition: 200ms ease-out;
 }
 
+.c10.outlined {
+  background: white;
+  border: 1px solid #04ACF4;
+  color: #04ACF4;
+}
+
+.c10.outlined:hover {
+  background: #04ACF4;
+  color: white;
+}
+
 .c10:hover {
   background: #0484f4;
   -webkit-transition: 200ms ease-out;
@@ -107,17 +118,32 @@ exports[`renders without crashing 1`] = `
   padding: 10px;
   width: 50%;
   max-width: 681px;
+  height: 0;
+}
+
+.c12 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c13 {
+  height: 100%;
+  width: 100%;
 }
 
 .c11 {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-}
-
-.c12 {
-  height: 100%;
-  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c1 {
@@ -304,7 +330,7 @@ exports[`renders without crashing 1`] = `
              Jakarta Barat
           </p>
           <button
-            class="c10"
+            class="outlined c10"
             style="float:right"
           >
             Lihat Detail
@@ -344,7 +370,7 @@ exports[`renders without crashing 1`] = `
              Jakarta Barat
           </p>
           <button
-            class="c10"
+            class="outlined c10"
             style="float:right"
           >
             Lihat Detail
@@ -384,7 +410,7 @@ exports[`renders without crashing 1`] = `
              Jakarta Barat
           </p>
           <button
-            class="c10"
+            class="outlined c10"
             style="float:right"
           >
             Lihat Detail
@@ -424,19 +450,35 @@ exports[`renders without crashing 1`] = `
              Jakarta Barat
           </p>
           <button
-            class="c10"
+            class="outlined c10"
             style="float:right"
           >
             Lihat Detail
           </button>
         </div>
+      </div>
+      <div
+        class="c11"
+      >
+        <button
+          class="c10"
+          style="margin:5px;width:100px"
+        >
+          Previous
+        </button>
+        <button
+          class="c10"
+          style="margin:5px;width:100px"
+        >
+          Next
+        </button>
       </div>
     </div>
     <div
-      class="c11"
+      class="c12"
     >
       <div
-        class="c12"
+        class="c13"
       />
     </div>
   </div>

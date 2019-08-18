@@ -19,3 +19,11 @@ it('renders <Button /> with style', () => {
 
   expect(wrapper).toMatchSnapshot();
 });
+
+it('renders outlined <Button />', () => {
+  const wrapper = render(
+    <Button outlined />
+  );
+
+  expect(wrapper).toMatchSnapshot();
+});

@@ -15,6 +15,17 @@ exports[`renders <Button /> 1`] = `
   transition: 200ms ease-out;
 }
 
+.c0.outlined {
+  background: white;
+  border: 1px solid #04ACF4;
+  color: #04ACF4;
+}
+
+.c0.outlined:hover {
+  background: #04ACF4;
+  color: white;
+}
+
 .c0:hover {
   background: #0484f4;
   -webkit-transition: 200ms ease-out;
@@ -41,6 +52,17 @@ exports[`renders <Button /> with style 1`] = `
   transition: 200ms ease-out;
 }
 
+.c0.outlined {
+  background: white;
+  border: 1px solid #04ACF4;
+  color: #04ACF4;
+}
+
+.c0.outlined:hover {
+  background: #04ACF4;
+  color: white;
+}
+
 .c0:hover {
   background: #0484f4;
   -webkit-transition: 200ms ease-out;
@@ -50,5 +72,42 @@ exports[`renders <Button /> with style 1`] = `
 <button
   class="c0"
   style="float:right"
+/>
+`;
+
+exports[`renders outlined <Button /> 1`] = `
+.c0 {
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  line-height: 24px;
+  font-size: 16px;
+  background: #04ACF4;
+  color: white;
+  cursor: pointer;
+  font-family: 'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+  -webkit-transition: 200ms ease-out;
+  transition: 200ms ease-out;
+}
+
+.c0.outlined {
+  background: white;
+  border: 1px solid #04ACF4;
+  color: #04ACF4;
+}
+
+.c0.outlined:hover {
+  background: #04ACF4;
+  color: white;
+}
+
+.c0:hover {
+  background: #0484f4;
+  -webkit-transition: 200ms ease-out;
+  transition: 200ms ease-out;
+}
+
+<button
+  class="outlined c0"
 />
 `;

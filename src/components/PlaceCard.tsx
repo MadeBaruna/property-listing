@@ -71,7 +71,7 @@ const PlaceCard: React.FC<IProps> = ({ thumbnail, name, description, city }) => 
       <h3>{name}</h3>
       <p>{description}</p>
       <p className="city"><MdiCityIcon /> {city}</p>
-      <Button style={{ float: "right" }}>Lihat Detail</Button>
+      <Button outlined style={{ float: "right" }}>Lihat Detail</Button>
     </Content>
   </Card>
 );
