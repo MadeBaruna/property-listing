@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import MdiCityIcon from 'mdi-react/CityIcon';
 
 // this component inspired from: https://codepen.io/virgilpana/pen/RNYQwB

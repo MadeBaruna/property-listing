@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import MdiSearchIcon from 'mdi-react/SearchIcon';
 
 const Container = styled.div<{ focused: boolean }>`
@@ -56,8 +56,12 @@ const SearchIconButton = styled.button<{ focused: boolean }>`
   }
 `;
 
-const SearchIcon = styled(MdiSearchIcon)<{ focused: boolean }>`
-  fill: ${({ focused }) => focused ? 'white' : 'black'};
+const SearchIcon = styled(MdiSearchIcon)`
+  fill: black;
+
+  &.focused {
+    fill: white;
+  }
 `;
 
 const SearchBar: React.FC = () => {
@@ -71,7 +75,7 @@ const SearchBar: React.FC = () => {
         <option>Office</option>
       </Select>
       <SearchIconButton focused={focused}>
-        <SearchIcon focused={focused} size={30} />
+        <SearchIcon className={focused ? 'focused' : ''} size={30} />
       </SearchIconButton>
     </Container>
   );

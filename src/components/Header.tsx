@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import SearchBar from './SearchBar';
 
 const Container = styled.div`

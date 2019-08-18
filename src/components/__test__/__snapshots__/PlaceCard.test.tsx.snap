@@ -1,8 +1,96 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders <PlaceCard /> 1`] = `
-<styled.div>
-  <styled.div>
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background: white;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 335px;
+  margin: 10px;
+  cursor: pointer;
+  -webkit-transition: 100ms ease-out;
+  transition: 100ms ease-out;
+}
+
+.c1:hover {
+  box-shadow: 0px 13px 21px -5px rgba(0,0,0,0.2);
+  -webkit-transition: 100ms ease-out;
+  transition: 100ms ease-out;
+}
+
+.c2 {
+  position: relative;
+}
+
+.c2 img {
+  object-fit: cover;
+  width: 100%;
+}
+
+.c2 span {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0,0,0,0.5);
+  padding: 5px 10px;
+  color: white;
+  opacity: 0;
+  -webkit-transition: 100ms ease-out;
+  transition: 100ms ease-out;
+}
+
+.c0:hover .c2 span {
+  opacity: 1;
+  -webkit-transition: 100ms ease-out;
+  transition: 100ms ease-out;
+}
+
+.c3 {
+  padding: 10px;
+}
+
+.c3 h3 {
+  white-space: nowrap;
+  overflow: hidden;
+  display: block;
+  text-overflow: ellipsis;
+}
+
+.c3 p {
+  height: 100%;
+  line-height: 18px;
+  max-height: 36px;
+  word-wrap: break-word;
+  overflow: hidden;
+  margin-top: 15px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c3 p.city {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c3 svg {
+  margin-right: 5px;
+}
+
+<div
+  class="c0 c1"
+>
+  <div
+    class="c2"
+  >
     <img
       alt="thumbnail"
       src="https://loremflickr.com/320/240/apartment,office?lock=1"
@@ -10,8 +98,10 @@ exports[`renders <PlaceCard /> 1`] = `
     <span>
       Lihat Detail
     </span>
-  </styled.div>
-  <styled.div>
+  </div>
+  <div
+    class="c3"
+  >
     <h3>
       Mediterania Garden Residence 22222222
     </h3>
@@ -19,12 +109,21 @@ exports[`renders <PlaceCard /> 1`] = `
       Mediterania Garden Residence 2 berlokasi di Podomoro City Jl. Letjen S.Parman Kav.28. Apartemen ini dikembangkan oleh PT Agung Podomoro Land , Tbk,Mediterania Garden Residence 2 memiliki 6 tower. Dalam kompleks ini tersedia beragam fasilitas untuk mendukung hunian Anda, Terdapat pula beragam sarana dan fasilitas yang menjamin kenyamanan hunian Anda, seperti: Access Card, Atm Center, Basketball Court, Bbq Pit, Drug Store, Function Hall, Gym, Jogging Track, Laundry, Mini Market, Movie Theater, Playground, Restaurant, Salon, Super Market, Swimming Pool dan Tennis Court.
     </p>
     <p
-      className="city"
+      class="city"
     >
-      <Memo(CityIcon) />
-       
-      Jakarta Barat
+      <svg
+        class="mdi-icon "
+        fill="currentColor"
+        height="24"
+        viewBox="0 0 24 24"
+        width="24"
+      >
+        <path
+          d="M19,15H17V13H19M19,19H17V17H19M13,7H11V5H13M13,11H11V9H13M13,15H11V13H13M13,19H11V17H13M7,11H5V9H7M7,15H5V13H7M7,19H5V17H7M15,11V5L12,2L9,5V7H3V21H21V11H15Z"
+        />
+      </svg>
+       Jakarta Barat
     </p>
-  </styled.div>
-</styled.div>
+  </div>
+</div>
 `;

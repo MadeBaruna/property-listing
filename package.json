@@ -49,5 +49,8 @@
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ]
+  },
+  "devDependencies": {
+    "jest-styled-components": "^6.3.3"
   }
 }
