@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders <PlaceCard /> 1`] = `
+<styled.div>
+  <styled.div>
+    <img
+      alt="thumbnail"
+      src="https://loremflickr.com/320/240/apartment,office?lock=1"
+    />
+    <span>
+      Lihat Detail
+    </span>
+  </styled.div>
+  <styled.div>
+    <h3>
+      Mediterania Garden Residence 22222222
+    </h3>
+    <p>
+      Mediterania Garden Residence 2 berlokasi di Podomoro City Jl. Letjen S.Parman Kav.28. Apartemen ini dikembangkan oleh PT Agung Podomoro Land , Tbk,Mediterania Garden Residence 2 memiliki 6 tower. Dalam kompleks ini tersedia beragam fasilitas untuk mendukung hunian Anda, Terdapat pula beragam sarana dan fasilitas yang menjamin kenyamanan hunian Anda, seperti: Access Card, Atm Center, Basketball Court, Bbq Pit, Drug Store, Function Hall, Gym, Jogging Track, Laundry, Mini Market, Movie Theater, Playground, Restaurant, Salon, Super Market, Swimming Pool dan Tennis Court.
+    </p>
+    <p
+      className="city"
+    >
+      <Memo(CityIcon) />
+       
+      Jakarta Barat
+    </p>
+  </styled.div>
+</styled.div>
+`;
