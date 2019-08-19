@@ -23,5 +23,6 @@ yarn test
 ```
 
 ## TODO
+- [ ] Better pagination UX
 - [ ] Better mobile UI
 - [ ] Create missing test
