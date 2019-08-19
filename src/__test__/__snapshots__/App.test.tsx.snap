@@ -1,152 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders without crashing 1`] = `
-.c10 {
-  border: none;
-  border-radius: 4px;
-  padding: 6px 12px;
-  line-height: 24px;
-  font-size: 16px;
-  background: #04ACF4;
-  color: white;
-  cursor: pointer;
-  font-family: 'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
-  -webkit-transition: 200ms ease-out;
-  transition: 200ms ease-out;
-}
-
-.c10.outlined {
+Array [
+  .c1 {
   background: white;
-  border: 1px solid #04ACF4;
-  color: #04ACF4;
-}
-
-.c10.outlined:hover {
-  background: #04ACF4;
-  color: white;
-}
-
-.c10:hover {
-  background: #0484f4;
-  -webkit-transition: 200ms ease-out;
-  transition: 200ms ease-out;
-}
-
-.c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  background: white;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  width: calc(50% - 20px);
-  max-width: 320px;
-  margin: 10px;
-  cursor: pointer;
-  -webkit-transition: 100ms ease-out;
-  transition: 100ms ease-out;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-
-.c8 img {
-  object-fit: cover;
+  margin-left: 20px;
+  box-shadow: 0 0 0 2px rgba(0,0,0,.1);
+  max-width: 500px;
   width: 100%;
+  border-radius: 2px;
 }
 
-.c8:hover {
-  box-shadow: 0px 13px 21px -5px rgba(0,0,0,0.2);
-  -webkit-transition: 100ms ease-out;
-  transition: 100ms ease-out;
-}
-
-.c9 {
-  padding: 10px;
-}
-
-.c9 h3 {
-  white-space: nowrap;
-  overflow: hidden;
-  display: block;
-  text-overflow: ellipsis;
-}
-
-.c9 p {
-  height: 100%;
-  line-height: 18px;
-  max-height: 36px;
-  word-wrap: break-word;
-  overflow: hidden;
-  margin-top: 5px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c9 p.city {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  margin-bottom: 5px;
-}
-
-.c9 svg {
-  margin-right: 5px;
-}
-
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: calc(100vh - 70px);
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  padding: 10px;
-  width: 50%;
-  max-width: 681px;
-  height: 0;
-}
-
-.c12 {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-}
-
-.c13 {
-  height: 100%;
-  width: 100%;
-}
-
-.c11 {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c1 {
+.c1 form {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -158,13 +23,7 @@ exports[`renders without crashing 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: white;
   height: 40px;
-  margin-left: 20px;
-  box-shadow: 0 0 0 2px rgba(0,0,0,.1);
-  max-width: 500px;
-  width: 100%;
-  border-radius: 2px;
 }
 
 .c2 {
@@ -249,238 +108,121 @@ exports[`renders without crashing 1`] = `
   box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.05);
 }
 
+.c0 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
 <div
-  class="App"
->
-  <div
     class="c0"
   >
-    <h3>
-      Property Listing
-    </h3>
+    <a
+      href="/"
+    >
+      <h3>
+        Property Listing
+      </h3>
+    </a>
     <div
       class="c1"
     >
-      <input
-        class="c2"
-      />
-      <select
-        class="c3"
-      >
-        <option>
-          Apartment
-        </option>
-        <option>
-          Office
-        </option>
-      </select>
-      <button
-        class="c4"
-      >
-        <svg
-          class="mdi-icon c5"
-          fill="currentColor"
-          height="30"
-          viewBox="0 0 24 24"
-          width="30"
+      <form>
+        <input
+          class="c2"
+          value=""
+        />
+        <select
+          class="c3"
         >
-          <path
-            d="M9.5,3C13.09,3 16,5.91 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16C5.91,16 3,13.09 3,9.5C3,5.91 5.91,3 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"
-          />
-        </svg>
-      </button>
+          <option
+            selected=""
+            value="APARTMENT"
+          >
+            Apartment
+          </option>
+          <option
+            value="OFFICE"
+          >
+            Office
+          </option>
+        </select>
+        <button
+          class="c4"
+        >
+          <svg
+            class="mdi-icon c5"
+            fill="currentColor"
+            height="30"
+            viewBox="0 0 24 24"
+            width="30"
+          >
+            <path
+              d="M9.5,3C13.09,3 16,5.91 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16C5.91,16 3,13.09 3,9.5C3,5.91 5.91,3 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"
+            />
+          </svg>
+        </button>
+      </form>
     </div>
-  </div>
-  <div
-    class="c6"
+  </div>,
+  .c4 {
+  height: 100%;
+  width: 100%;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: calc(100vh - 70px);
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 50%;
+  max-width: 681px;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.c3 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+<div
+    class="c0"
   >
     <div
-      class="c7"
+      class="c1"
     >
       <div
-        class="c8"
-      >
-        <img
-          alt="thumbnail"
-          src="https://loremflickr.com/320/240/apartment,office?lock=1"
-        />
-        <div
-          class="c9"
-        >
-          <h3>
-            Mediterania Garden Residence 22222222
-          </h3>
-          <p>
-            Mediterania Garden Residence 2 berlokasi di Podomoro City Jl. Letjen S.Parman Kav.28. Apartemen ini dikembangkan oleh PT Agung Podomoro Land , Tbk,Mediterania Garden Residence 2 memiliki 6 tower. Dalam kompleks ini tersedia beragam fasilitas untuk mendukung hunian Anda, Terdapat pula beragam sarana dan fasilitas yang menjamin kenyamanan hunian Anda, seperti: Access Card, Atm Center, Basketball Court, Bbq Pit, Drug Store, Function Hall, Gym, Jogging Track, Laundry, Mini Market, Movie Theater, Playground, Restaurant, Salon, Super Market, Swimming Pool dan Tennis Court.
-          </p>
-          <p
-            class="city"
-          >
-            <svg
-              class="mdi-icon "
-              fill="currentColor"
-              height="24"
-              viewBox="0 0 24 24"
-              width="24"
-            >
-              <path
-                d="M19,15H17V13H19M19,19H17V17H19M13,7H11V5H13M13,11H11V9H13M13,15H11V13H13M13,19H11V17H13M7,11H5V9H7M7,15H5V13H7M7,19H5V17H7M15,11V5L12,2L9,5V7H3V21H21V11H15Z"
-              />
-            </svg>
-             Jakarta Barat
-          </p>
-          <button
-            class="outlined c10"
-            style="float:right"
-          >
-            Lihat Detail
-          </button>
-        </div>
-      </div>
-      <div
-        class="c8"
-      >
-        <img
-          alt="thumbnail"
-          src="https://loremflickr.com/320/240/apartment,office?lock=1"
-        />
-        <div
-          class="c9"
-        >
-          <h3>
-            Mediterania Garden Residence 2
-          </h3>
-          <p>
-            Mediterania Garden Residence 2 berlokasi di Podomoro City Jl. Letjen S.Parman Kav.28. Apartemen ini dikembangkan oleh PT Agung Podomoro Land , Tbk,Mediterania Garden Residence 2 memiliki 6 tower. Dalam kompleks ini tersedia beragam fasilitas untuk mendukung hunian Anda, Terdapat pula beragam sarana dan fasilitas yang menjamin kenyamanan hunian Anda, seperti: Access Card, Atm Center, Basketball Court, Bbq Pit, Drug Store, Function Hall, Gym, Jogging Track, Laundry, Mini Market, Movie Theater, Playground, Restaurant, Salon, Super Market, Swimming Pool dan Tennis Court.
-          </p>
-          <p
-            class="city"
-          >
-            <svg
-              class="mdi-icon "
-              fill="currentColor"
-              height="24"
-              viewBox="0 0 24 24"
-              width="24"
-            >
-              <path
-                d="M19,15H17V13H19M19,19H17V17H19M13,7H11V5H13M13,11H11V9H13M13,15H11V13H13M13,19H11V17H13M7,11H5V9H7M7,15H5V13H7M7,19H5V17H7M15,11V5L12,2L9,5V7H3V21H21V11H15Z"
-              />
-            </svg>
-             Jakarta Barat
-          </p>
-          <button
-            class="outlined c10"
-            style="float:right"
-          >
-            Lihat Detail
-          </button>
-        </div>
-      </div>
-      <div
-        class="c8"
-      >
-        <img
-          alt="thumbnail"
-          src="https://loremflickr.com/320/240/apartment,office?lock=1"
-        />
-        <div
-          class="c9"
-        >
-          <h3>
-            Mediterania Garden Residence 2
-          </h3>
-          <p>
-            Mediterania Garden Residence 2 berlokasi di Podomoro City Jl. Letjen S.Parman Kav.28. Apartemen ini dikembangkan oleh PT Agung Podomoro Land , Tbk,Mediterania Garden Residence 2 memiliki 6 tower. Dalam kompleks ini tersedia beragam fasilitas untuk mendukung hunian Anda, Terdapat pula beragam sarana dan fasilitas yang menjamin kenyamanan hunian Anda, seperti: Access Card, Atm Center, Basketball Court, Bbq Pit, Drug Store, Function Hall, Gym, Jogging Track, Laundry, Mini Market, Movie Theater, Playground, Restaurant, Salon, Super Market, Swimming Pool dan Tennis Court.
-          </p>
-          <p
-            class="city"
-          >
-            <svg
-              class="mdi-icon "
-              fill="currentColor"
-              height="24"
-              viewBox="0 0 24 24"
-              width="24"
-            >
-              <path
-                d="M19,15H17V13H19M19,19H17V17H19M13,7H11V5H13M13,11H11V9H13M13,15H11V13H13M13,19H11V17H13M7,11H5V9H7M7,15H5V13H7M7,19H5V17H7M15,11V5L12,2L9,5V7H3V21H21V11H15Z"
-              />
-            </svg>
-             Jakarta Barat
-          </p>
-          <button
-            class="outlined c10"
-            style="float:right"
-          >
-            Lihat Detail
-          </button>
-        </div>
-      </div>
-      <div
-        class="c8"
-      >
-        <img
-          alt="thumbnail"
-          src="https://loremflickr.com/320/240/apartment,office?lock=1"
-        />
-        <div
-          class="c9"
-        >
-          <h3>
-            Mediterania Garden Residence 2
-          </h3>
-          <p>
-            Mediterania Garden Residence 2 berlokasi di Podomoro City Jl. Letjen S.Parman Kav.28. Apartemen ini dikembangkan oleh PT Agung Podomoro Land , Tbk,Mediterania Garden Residence 2 memiliki 6 tower. Dalam kompleks ini tersedia beragam fasilitas untuk mendukung hunian Anda, Terdapat pula beragam sarana dan fasilitas yang menjamin kenyamanan hunian Anda, seperti: Access Card, Atm Center, Basketball Court, Bbq Pit, Drug Store, Function Hall, Gym, Jogging Track, Laundry, Mini Market, Movie Theater, Playground, Restaurant, Salon, Super Market, Swimming Pool dan Tennis Court.
-          </p>
-          <p
-            class="city"
-          >
-            <svg
-              class="mdi-icon "
-              fill="currentColor"
-              height="24"
-              viewBox="0 0 24 24"
-              width="24"
-            >
-              <path
-                d="M19,15H17V13H19M19,19H17V17H19M13,7H11V5H13M13,11H11V9H13M13,15H11V13H13M13,19H11V17H13M7,11H5V9H7M7,15H5V13H7M7,19H5V17H7M15,11V5L12,2L9,5V7H3V21H21V11H15Z"
-              />
-            </svg>
-             Jakarta Barat
-          </p>
-          <button
-            class="outlined c10"
-            style="float:right"
-          >
-            Lihat Detail
-          </button>
-        </div>
-      </div>
-      <div
-        class="c11"
-      >
-        <button
-          class="c10"
-          style="margin:5px;width:100px"
-        >
-          Previous
-        </button>
-        <button
-          class="c10"
-          style="margin:5px;width:100px"
-        >
-          Next
-        </button>
-      </div>
-    </div>
-    <div
-      class="c12"
-    >
-      <div
-        class="c13"
+        class="c2"
       />
     </div>
-  </div>
-</div>
+    <div
+      class="c3"
+    >
+      <div
+        class="c4"
+      />
+    </div>
+  </div>,
+]
 `;

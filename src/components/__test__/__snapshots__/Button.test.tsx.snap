@@ -26,14 +26,23 @@ exports[`renders <Button /> 1`] = `
   color: white;
 }
 
+.c0.disabled {
+  background: grey;
+}
+
 .c0:hover {
   background: #0484f4;
   -webkit-transition: 200ms ease-out;
   transition: 200ms ease-out;
 }
 
+.c0:hover.disabled {
+  background: grey;
+  cursor: default;
+}
+
 <button
-  class="c0"
+  class="  c0"
 />
 `;
 
@@ -63,14 +72,23 @@ exports[`renders <Button /> with style 1`] = `
   color: white;
 }
 
+.c0.disabled {
+  background: grey;
+}
+
 .c0:hover {
   background: #0484f4;
   -webkit-transition: 200ms ease-out;
   transition: 200ms ease-out;
 }
 
+.c0:hover.disabled {
+  background: grey;
+  cursor: default;
+}
+
 <button
-  class="c0"
+  class="  c0"
   style="float:right"
 />
 `;
@@ -101,13 +119,22 @@ exports[`renders outlined <Button /> 1`] = `
   color: white;
 }
 
+.c0.disabled {
+  background: grey;
+}
+
 .c0:hover {
   background: #0484f4;
   -webkit-transition: 200ms ease-out;
   transition: 200ms ease-out;
 }
 
+.c0:hover.disabled {
+  background: grey;
+  cursor: default;
+}
+
 <button
-  class="outlined c0"
+  class="outlined  c0"
 />
 `;
