@@ -21,3 +21,7 @@ serve -s build
 ```
 yarn test
 ```
+
+## TODO
+- [ ] Better mobile UI
+- [ ] Create missing test
