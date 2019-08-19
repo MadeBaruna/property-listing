@@ -1,6 +1,6 @@
 # Property Listing
 Created with react and graphql (apollo)  
-To run locally, please run the server first https://github.com/MadeBaruna/property-listing-backend
+To run locally, please run the server first https://github.com/MadeBaruna/property-listing-backend  
 Or you can view the demo here: https://demo-property.baruna.win/
 
 ## Running
