@@ -8,6 +8,7 @@ import marker from 'leaflet/dist/images/marker-icon.png';
 import marker2x from 'leaflet/dist/images/marker-icon-2x.png';
 import markerShadow from 'leaflet/dist/images/marker-shadow.png';
 import { GET_PLACES } from '../graphql/queries/__generated__/GET_PLACES';
+import { withRouter, RouteComponentProps } from 'react-router';
 
 // @ts-ignore
 delete L.Icon.Default.prototype._getIconUrl;
@@ -17,16 +18,16 @@ L.Icon.Default.mergeOptions({
   shadowUrl: markerShadow
 });
 
-interface IProps {
-  data?: GET_PLACES,
-}
-
 const MapStyled = styled(LeafletMap)`
   height: 100%;
   width: 100%;
 `;
 
-const Map: React.FC<IProps> = ({ data }) => {
+interface IProps extends RouteComponentProps {
+  data?: GET_PLACES,
+}
+
+const Map: React.FC<IProps> = ({ data, history }) => {
   let bounds = new L.LatLngBounds([0.1, 0], [0, 0.1]);
   let center = new L.LatLng(0, 0);
   if (data && data.places && data.places.length > 0) {
@@ -44,6 +45,18 @@ const Map: React.FC<IProps> = ({ data }) => {
     }
   }
 
+  const openPopup = (e: any) => {
+    e.target.openPopup();
+  }
+  
+  const closePopup = (e: any) => {
+    e.target.closePopup();
+  }
+  
+  const openDetail = (id: string) => () => {
+    history.push(`/property/${id}`);
+  }  
+
   return (
     <MapStyled center={center} zoom={13} bounds={bounds}>
       <TileLayer
@@ -56,6 +69,7 @@ const Map: React.FC<IProps> = ({ data }) => {
           position={[place.address.latitude, place.address.longitude]}
           onMouseOver={openPopup}
           onMouseOut={closePopup}
+          onClick={openDetail(place.id)}
         >
           <Popup>
             <h3>{place.name}</h3>
@@ -67,12 +81,4 @@ const Map: React.FC<IProps> = ({ data }) => {
   );
 }
 
-const openPopup = (e: any) => {
-  e.target.openPopup();
-}
-
-const closePopup = (e: any) => {
-  e.target.closePopup();
-}
-
-export default Map;
+export default withRouter(Map);
