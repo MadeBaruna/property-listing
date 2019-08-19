@@ -9,7 +9,7 @@ import Button from '../components/Button';
 
 import { GET_PLACES } from '../graphql/queries/__generated__/GET_PLACES';
 import { GET_PLACES as GET_PLACES_QUERY } from '../graphql/queries/GetPlaces';
-import Map from '../components/Map';
+import Map from '../components/SearchMap';
 
 const Container = styled.div`
   display: flex;
@@ -94,6 +94,7 @@ const Search: React.FC<RouteComponentProps> = ({ location }) => {
           {!loading && !!data && !error && data.places.map(place => (
             <PlaceCard
               key={place.id}
+              id={place.id}
               name={place.name}
               description={place.description}
               city={place.address.city}

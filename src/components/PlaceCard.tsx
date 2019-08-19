@@ -2,10 +2,11 @@ import React from 'react';
 import styled from 'styled-components/macro';
 import MdiCityIcon from 'mdi-react/CityIcon';
 import Button from './Button';
+import { Link } from 'react-router-dom';
 
 // this component inspired from: https://codepen.io/virgilpana/pen/RNYQwB
 
-const Card = styled.div`
+const Card = styled(Link)`
   display: flex;
   background: white;
   flex-direction: column;
@@ -15,6 +16,7 @@ const Card = styled.div`
   cursor: pointer;
   transition: 100ms ease-out; 
   height: fit-content;
+  text-decoration: none;
 
   &:hover {
     box-shadow:0px 13px 21px -5px rgba(0, 0, 0, 0.2);
@@ -71,14 +73,15 @@ const Content = styled.div`
 `;
 
 interface IProps {
+  id: string;
   thumbnail: string;
   name: string;
   description: string;
   city: string;
 }
 
-const PlaceCard: React.FC<IProps> = ({ thumbnail, name, description, city }) => (
-  <Card>
+const PlaceCard: React.FC<IProps> = ({ id, thumbnail, name, description, city }) => (
+  <Card to={`/property/${id}`}>
     <ImageContainer>
       <img src={thumbnail} alt="thumbnail" />
     </ImageContainer>
