@@ -77,6 +77,8 @@ const Search: React.FC<RouteComponentProps> = ({ location }) => {
       },
       updateQuery: (prev, { fetchMoreResult }) => {
         if (!fetchMoreResult) return prev;
+        // need to update backend to get result count for disabled button purposes
+        // for now if there is no result, return previous result
         if (fetchMoreResult.places.length === 0)
           return prev;
 
@@ -100,10 +102,12 @@ const Search: React.FC<RouteComponentProps> = ({ location }) => {
 
           {!loading && !!data && !error && data.places.length === 0 && <p>No result</p>}
         </CardContainer>
-        <ControlContainer>
-          <Button style={{ margin: 5, width: 100 }} onClick={() => getPlaces({ last: 4 })}>Previous</Button>
-          <Button style={{ margin: 5, width: 100 }} onClick={() => getPlaces({ first: 4 })}>Next</Button>
-        </ControlContainer>
+        {!!data && data.places && data.places.length !== 0 &&
+          <ControlContainer>
+            <Button style={{ margin: 5, width: 100 }} onClick={() => getPlaces({ last: 4 })}>Previous</Button>
+            <Button style={{ margin: 5, width: 100 }} onClick={() => getPlaces({ first: 4 })}>Next</Button>
+          </ControlContainer>
+        }
       </LeftContainer>
       <MapContainer>
         <Map data={data} />
