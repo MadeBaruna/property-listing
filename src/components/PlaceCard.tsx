@@ -16,14 +16,27 @@ const Card = styled.div`
   transition: 100ms ease-out; 
   height: fit-content;
 
-  img {
-    object-fit: cover;
-    width: 100%;
-  }
-
   &:hover {
     box-shadow:0px 13px 21px -5px rgba(0, 0, 0, 0.2);
     transition:  100ms ease-out; 
+  }
+`;
+
+const ImageContainer = styled.div`
+  position: relative;
+  width: 100%;
+
+  &:after {
+    content: "";
+    display: block;
+    padding-bottom: 75%;
+  }
+
+  img {
+    object-fit: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
   }
 `;
 
@@ -66,7 +79,9 @@ interface IProps {
 
 const PlaceCard: React.FC<IProps> = ({ thumbnail, name, description, city }) => (
   <Card>
-    <img src={thumbnail} alt="thumbnail" />
+    <ImageContainer>
+      <img src={thumbnail} alt="thumbnail" />
+    </ImageContainer>
     <Content>
       <h3>{name}</h3>
       <p>{description}</p>

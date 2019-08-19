@@ -1,5 +1,8 @@
 import React from 'react';
 import styled from 'styled-components/macro';
+import { withRouter, RouteComponentProps } from 'react-router';
+import queryString from 'query-string';
+
 import SearchBar from './SearchBar';
 
 const Container = styled.div`
@@ -12,11 +15,17 @@ const Container = styled.div`
   box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.05);
 `;
 
-const Header: React.FC = () => (
-  <Container>
-    <h3>Property Listing</h3>
-    <SearchBar />
-  </Container>
-);
+const Header: React.FC<RouteComponentProps> = ({ location }) => {
+  const query = queryString.parse(location.search);
+  const search = query.search && !Array.isArray(query.search) ? query.search : undefined;
+  const type = query.type && !Array.isArray(query.type) ? query.type.toUpperCase() : undefined;
 
-export default Header;
+  return (
+    <Container>
+      <h3>Property Listing</h3>
+      <SearchBar search={search} type={type} />
+    </Container>
+  );
+}
+
+export default withRouter(Header);

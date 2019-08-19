@@ -24,19 +24,33 @@ const ButtonStyled = styled.button`
     }
   }
 
+  &.disabled {
+    background: grey;
+  }
+
   &:hover {
     background: #0484f4;
     transition: 200ms ease-out;
+
+    &.disabled {
+      background: grey;
+      cursor: default;
+    }
   }
 `;
 
-interface IProps {
-  style?: React.CSSProperties;
+interface IProps extends React.HTMLProps<HTMLButtonElement> {
   outlined?: boolean;
+  disabled?: boolean;
 }
 
-const Button: React.FC<IProps> = ({ children, style, outlined }) => (
-  <ButtonStyled className={outlined ? 'outlined' : ''} style={style}>{children}</ButtonStyled>
+const Button: React.FC<IProps> = ({ children, outlined, disabled, style, onClick }) => (
+  <ButtonStyled
+    style={style}
+    onClick={disabled ? () => { } : onClick}
+    className={`${outlined ? 'outlined' : ''} ${disabled ? 'disabled' : ''}`}>
+    {children}
+  </ButtonStyled>
 );
 
 export default Button;

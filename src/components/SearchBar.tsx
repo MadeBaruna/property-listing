@@ -1,18 +1,22 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 import MdiSearchIcon from 'mdi-react/SearchIcon';
+import { withRouter, RouteComponentProps } from 'react-router';
 
 const Container = styled.div<{ focused: boolean }>`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
   background: white;
-  height: 40px;
   margin-left: 20px;
   box-shadow: ${({ focused }) => focused ? `0 0 0 2px #04ACF4` : `0 0 0 2px rgba(0, 0, 0, .1)`};
   max-width: 500px;
   width: 100%;
   border-radius: 2px;
+
+  form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 40px;
+  }
 `;
 
 const Input = styled.input`
@@ -64,21 +68,42 @@ const SearchIcon = styled(MdiSearchIcon)`
   }
 `;
 
-const SearchBar: React.FC = () => {
+interface IProps extends RouteComponentProps {
+  search?: string;
+  type?: string;
+}
+
+const SearchBar: React.FC<IProps> = ({ search, type, history }) => {
   const [focused, setFocused] = React.useState(false);
+  const [query, setQuery] = React.useState(search || '');
+  const [selectedType, setSelectedType] = React.useState(type || 'APARTMENT');
 
   return (
     <Container focused={focused}>
-      <Input onFocus={() => setFocused(true)} onBlur={() => setFocused(false)} />
-      <Select onFocus={() => setFocused(true)} onBlur={() => setFocused(false)}>
-        <option>Apartment</option>
-        <option>Office</option>
-      </Select>
-      <SearchIconButton focused={focused}>
-        <SearchIcon className={focused ? 'focused' : ''} size={30} />
-      </SearchIconButton>
+      <form onSubmit={(e) => {
+        e.preventDefault();
+        history.push(`/?search=${query}&type=${selectedType}`);
+      }}>
+        <Input
+          value={query}
+          onChange={e => setQuery(e.target.value)}
+          onFocus={() => setFocused(true)}
+          onBlur={() => setFocused(false)} />
+        <Select
+          value={selectedType}
+          onChange={e => setSelectedType(e.target.value)}
+          onFocus={() => setFocused(true)}
+          onBlur={() => setFocused(false)}
+        >
+          <option value="APARTMENT">Apartment</option>
+          <option value="OFFICE">Office</option>
+        </Select>
+        <SearchIconButton onClick={() => history.push(`/?search=${query}&type=${selectedType}`)} focused={focused}>
+          <SearchIcon className={focused ? 'focused' : ''} size={30} />
+        </SearchIconButton>
+      </form>
     </Container>
   );
 }
 
-export default SearchBar;
+export default withRouter(SearchBar);

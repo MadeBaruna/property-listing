@@ -1,106 +1,115 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components/macro';
-import { Map as LeafletMap, TileLayer, Marker, Popup, LatLng } from 'react-leaflet';
-import L from 'leaflet';
-import 'leaflet/dist/leaflet.css';
+import { useQuery } from 'react-apollo';
+import { withRouter, RouteComponentProps } from 'react-router';
+import queryString from 'query-string';
 
 import PlaceCard from '../components/PlaceCard';
-
-// workaround to fix marker icon
-import marker from 'leaflet/dist/images/marker-icon.png';
-import marker2x from 'leaflet/dist/images/marker-icon-2x.png';
-import markerShadow from 'leaflet/dist/images/marker-shadow.png';
 import Button from '../components/Button';
-// @ts-ignore
-delete L.Icon.Default.prototype._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: marker2x,
-  iconUrl: marker,
-  shadowUrl: markerShadow
-});
+
+import { GET_PLACES } from '../graphql/queries/__generated__/GET_PLACES';
+import { GET_PLACES as GET_PLACES_QUERY } from '../graphql/queries/GetPlaces';
+import Map from '../components/Map';
 
 const Container = styled.div`
   display: flex;
   height: calc(100vh - 70px);
 `;
 
+const LeftContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  max-width: 681px;
+`;
+
 const CardContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   padding: 10px;
-  width: 50%;
-  max-width: 681px;
-  height: 0;
+`;
+
+const ControlContainer = styled.div`
+  display: flex;
+  justify-content: center;
 `;
 
 const MapContainer = styled.div`
   flex: 1;
 `;
 
-const Map = styled(LeafletMap)`
-  height: 100%;
-  width: 100%;
-`;
+const Search: React.FC<RouteComponentProps> = ({ location }) => {
+  const query = queryString.parse(location.search);
 
-const ControlContainer = styled.div`
-  flex: 1;
-  display: flex;
-  justify-content: center;
-`;
+  const { loading, error, data, fetchMore } = useQuery<GET_PLACES>(
+    GET_PLACES_QUERY,
+    {
+      variables: {
+        first: 4,
+        search: query.search,
+        type: query.type && !Array.isArray(query.type) ? query.type.toUpperCase() : undefined,
+      }
+    }
+  );
 
-interface IState {
-  lat: number;
-  lng: number;
-  zoom: number;
-}
+  const getPlaces = ({ first, last }: { first?: number, last?: number }) => {
+    if (!data) {
+      return;
+    }
 
-export default class Search extends Component<{}, IState> {
-  state = {
-    lat: -6.1766995,
-    lng: 106.7895952,
-    zoom: 18
+    if (!data.places) {
+      return;
+    }
+
+    let after = undefined;
+    let before = undefined;
+    if (first) {
+      after = data.places[data.places.length - 1].id;
+    }
+
+    if (last) {
+      before = data.places[0].id;
+    }
+
+    fetchMore({
+      variables: {
+        after, before, first, last
+      },
+      updateQuery: (prev, { fetchMoreResult }) => {
+        if (!fetchMoreResult) return prev;
+        if (fetchMoreResult.places.length === 0)
+          return prev;
+
+        return fetchMoreResult;
+      }
+    })
   }
 
-  render() {
-    const position = {
-      lat: this.state.lat,
-      lng: this.state.lng
-    };
-
-    return (
-      <Container>
+  return (
+    <Container>
+      <LeftContainer>
         <CardContainer>
-          <PlaceCard thumbnail="https://loremflickr.com/320/240/apartment,office?lock=1" name="Mediterania Garden Residence 22222222" description="Mediterania Garden Residence 2 berlokasi di Podomoro City Jl. Letjen S.Parman Kav.28. Apartemen ini dikembangkan oleh PT Agung Podomoro Land , Tbk,Mediterania Garden Residence 2 memiliki 6 tower. Dalam kompleks ini tersedia beragam fasilitas untuk mendukung hunian Anda, Terdapat pula beragam sarana dan fasilitas yang menjamin kenyamanan hunian Anda, seperti: Access Card, Atm Center, Basketball Court, Bbq Pit, Drug Store, Function Hall, Gym, Jogging Track, Laundry, Mini Market, Movie Theater, Playground, Restaurant, Salon, Super Market, Swimming Pool dan Tennis Court." city="Jakarta Barat" />
-          <PlaceCard thumbnail="https://loremflickr.com/320/240/apartment,office?lock=1" name="Mediterania Garden Residence 2" description="Mediterania Garden Residence 2 berlokasi di Podomoro City Jl. Letjen S.Parman Kav.28. Apartemen ini dikembangkan oleh PT Agung Podomoro Land , Tbk,Mediterania Garden Residence 2 memiliki 6 tower. Dalam kompleks ini tersedia beragam fasilitas untuk mendukung hunian Anda, Terdapat pula beragam sarana dan fasilitas yang menjamin kenyamanan hunian Anda, seperti: Access Card, Atm Center, Basketball Court, Bbq Pit, Drug Store, Function Hall, Gym, Jogging Track, Laundry, Mini Market, Movie Theater, Playground, Restaurant, Salon, Super Market, Swimming Pool dan Tennis Court." city="Jakarta Barat" />
-          <PlaceCard thumbnail="https://loremflickr.com/320/240/apartment,office?lock=1" name="Mediterania Garden Residence 2" description="Mediterania Garden Residence 2 berlokasi di Podomoro City Jl. Letjen S.Parman Kav.28. Apartemen ini dikembangkan oleh PT Agung Podomoro Land , Tbk,Mediterania Garden Residence 2 memiliki 6 tower. Dalam kompleks ini tersedia beragam fasilitas untuk mendukung hunian Anda, Terdapat pula beragam sarana dan fasilitas yang menjamin kenyamanan hunian Anda, seperti: Access Card, Atm Center, Basketball Court, Bbq Pit, Drug Store, Function Hall, Gym, Jogging Track, Laundry, Mini Market, Movie Theater, Playground, Restaurant, Salon, Super Market, Swimming Pool dan Tennis Court." city="Jakarta Barat" />
-          <PlaceCard thumbnail="https://loremflickr.com/320/240/apartment,office?lock=1" name="Mediterania Garden Residence 2" description="Mediterania Garden Residence 2 berlokasi di Podomoro City Jl. Letjen S.Parman Kav.28. Apartemen ini dikembangkan oleh PT Agung Podomoro Land , Tbk,Mediterania Garden Residence 2 memiliki 6 tower. Dalam kompleks ini tersedia beragam fasilitas untuk mendukung hunian Anda, Terdapat pula beragam sarana dan fasilitas yang menjamin kenyamanan hunian Anda, seperti: Access Card, Atm Center, Basketball Court, Bbq Pit, Drug Store, Function Hall, Gym, Jogging Track, Laundry, Mini Market, Movie Theater, Playground, Restaurant, Salon, Super Market, Swimming Pool dan Tennis Court." city="Jakarta Barat" />
-          <ControlContainer>
-            <Button style={{ margin: 5, width: 100 }}>Previous</Button>
-            <Button style={{ margin: 5, width: 100 }}>Next</Button>
-          </ControlContainer>
+          {!loading && !!data && !error && data.places.map(place => (
+            <PlaceCard
+              key={place.id}
+              name={place.name}
+              description={place.description}
+              city={place.address.city}
+              thumbnail={place.images[0].thumbnailUrl} />
+          ))}
+
+          {!loading && !!data && !error && data.places.length === 0 && <p>No result</p>}
         </CardContainer>
-        <MapContainer>
-          <Map center={position} zoom={this.state.zoom}>
-            <TileLayer
-              attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-              url='https://{s}.tile.osm.org/{z}/{x}/{y}.png'
-            />
-            <Marker position={position} onMouseOver={this.openPopup} onMouseOut={this.closePopup}>
-              <Popup>
-                A pretty CSS3 popup. <br /> Easily customizable.
-              </Popup>
-            </Marker>
-          </Map>
-        </MapContainer>
-      </Container>
-    );
-  }
-
-  openPopup = (e: any) => {
-    e.target.openPopup();
-  }
-
-  closePopup = (e: any) => {
-    e.target.closePopup();
-  }
+        <ControlContainer>
+          <Button style={{ margin: 5, width: 100 }} onClick={() => getPlaces({ last: 4 })}>Previous</Button>
+          <Button style={{ margin: 5, width: 100 }} onClick={() => getPlaces({ first: 4 })}>Next</Button>
+        </ControlContainer>
+      </LeftContainer>
+      <MapContainer>
+        <Map data={data} />
+      </MapContainer>
+    </Container>
+  );
 }
+
+export default withRouter(Search);
