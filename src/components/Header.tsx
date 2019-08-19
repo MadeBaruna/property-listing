@@ -4,6 +4,7 @@ import { withRouter, RouteComponentProps } from 'react-router';
 import queryString from 'query-string';
 
 import SearchBar from './SearchBar';
+import { Link } from 'react-router-dom';
 
 const Container = styled.div`
   display: flex;
@@ -13,6 +14,10 @@ const Container = styled.div`
   height: 70px;
   padding: 0px 20px;
   box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.05);
+
+  a {
+    text-decoration: none;
+  }
 `;
 
 const Header: React.FC<RouteComponentProps> = ({ location }) => {
@@ -22,7 +27,7 @@ const Header: React.FC<RouteComponentProps> = ({ location }) => {
 
   return (
     <Container>
-      <h3>Property Listing</h3>
+      <Link to="/"><h3>Property Listing</h3></Link>
       <SearchBar search={search} type={type} />
     </Container>
   );
